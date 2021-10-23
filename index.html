@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>青田設計建築事務所</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="responsive.css">
+    </head>
+    <script>
+        const img =["img1.jpg","img2.jpg","img3.jpg","img4.jpg"];
+        const txt_title  = ["美容室elm","美容室elm","室見団地の鉄家具","室見団地の鉄家具"];
+        const txt_seko = ["施工 archisan","施工 archisan","溶接家 浦原 銀二","溶接家 浦原 銀二"]
+        let count = -1;
+
+        const hoge = () => {
+        count++;
+        // カウントが最大になれば初期値に戻す
+        if (count == img.length) count = 0;
+        //画像選択
+        pic.src = img[count];
+        // var obj = document.getElementsByClassName("one")
+        // elem.innerHTML = txt_title[count];
+        // child(0).textContent = txt_title[count];
+        document.getElementsByClassName("title")[0].textContent = txt_title[count];
+        document.getElementsByClassName("seko")[0].textContent = txt_seko[count];
+        //1秒ごとに実行    
+        setTimeout(() => { hoge(); }, 3000);
+    }
+        window.onload = () => {
+        
+        hoge();
+    }
+    </script>
+
+    <body>
+        <div class ="main">
+            <!-- タイトル挿入箇所 -->
+            <div class ="head">
+                <p class = "title">美容室elm</p>
+                <p class = "position">日本　福岡</p>
+                <p class = "seko">施工 archisan</p>
+            </div>
+            <!-- 画像挿入箇所 -->
+            <img id="pic" src="img1.jpg">
+            <!-- アドレス挿入箇所 -->
+            <div class = "foot">
+                <p class ="address">
+                    青田興明建築設計事務所<br/>
+                    <a href ="https://goo.gl/maps/TrAv7HeULkxboiY99">福岡市中央区地行1丁目9番地28</a><br/>
+                    お問い合わせは下記アドレスまで<br/>
+                    <a href ="mailto:address">aotatatsuaki@incloud.com</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
